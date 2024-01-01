@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block scripts %}
+<link rel="stylesheet" href="{% static 'home.css' %}">
+{% endblock scripts %}
+
+{% block content %}
+
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">My Services</a>
+            </li> -->
+          </ul>
+          
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Start Chat</button>
+        </div>
+    </nav>
+</div>
+
+<div class="container">
+  <div class="row auto-text">
+    <div class="col col-8">
+      <div class="wrapper">
+        <span class="text first-text"></span>
+        <span class="text sec-text"></span>
+      </div>
+    </div>
+    <div class="col col-4">
+      <div class="home-box">
+        <div class="btn btn-primary rounded" id="home-login">Login</div>
+        <div class="btn btn-primary rounded" id="home-register">Register</div>
+      </div>
+    </div>
+  </div>
+    
+</div>
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
+
+<script>
+  const textFirst = document.querySelector('.first-text');
+  const text = document.querySelector('.sec-text');
+  const loginBtn = document.getElementById('home-login');
+  const registerBtn = document.getElementById('home-register');
+
+  loginBtn.addEventListener('click', () => {
+    window.location.href = '/login/';
+  });
+
+  registerBtn.addEventListener('click', () => {
+    window.location.href = '/register/';
+  });
+
+  const textLoad = () => {
+    setTimeout(() => {
+      textFirst.textContent = "Welcome to";
+      text.textContent = "VietNam His Chatbot!";
+    }, 0);
+
+    setTimeout(() => {
+      textFirst.textContent = "Developed by";
+      text.textContent = "Group 7 KTMT02 - K15";
+    }, 4000);
+
+    setTimeout(() => {
+      textFirst.textContent = "Members";
+      text.textContent = "Nguyen Van Long";
+    }, 8000);
+
+    setTimeout(() => {
+      textFirst.textContent = "Members";
+      text.textContent = "Nguyen Quang Truong";
+    }, 12000);
+
+    setTimeout(() => {
+      textFirst.textContent = "Members";
+      text.textContent = "Nguyen Tien Dat";
+    }, 16000);
+  }
+
+  textLoad();
+  setInterval(textLoad, 20000);
+</script>
+
+{% endblock content %}

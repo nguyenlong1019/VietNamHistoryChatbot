@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block scripts %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+{% endblock scripts %}
+
+{% block content %}
+<div class="container-fuild">
+    <!-- <button class="sidebar-toggle">
+        <i class="fa-solid fa-bars"></i>
+    </button> -->
+    <div class="wrapper">
+        <div class="left bg-dark p-3">
+            <button id="new-chat" class="new-chat btn btn-outline-success my-2 my-sm-0"><i class="fa-solid fa-plus"></i> New Chat</button>
+            <div class="chat-list-box border border-primary rounded">
+                <div class="chat-item-box">
+                    <!-- <div class="chat-item-time">Today</div> -->
+                    <!-- <ul>
+                        <li>
+                            <div class="chat-item-title">Chat 1 Hello World My Friend</div>
+                            <div class="delete-chat-btn">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="chat-item-title">Chat 1</div>
+                            <div class="delete-chat-btn">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="chat-item-title">Chat 1</div>
+                            <div class="delete-chat-btn">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </div>
+                        </li>
+                    </ul> -->
+                </div>
+                
+            </div>
+            <div class="left-info border border-light rounded p-3">
+                <b>{{request.user.username}}</b>
+                <a href="{% url 'logout' %}">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </a>
+            </div>
+        </div>
+        <div class="right p-3">
+            <div class="chat-box">
+                <div class="chat-content p-3">
+                    <!-- Chat -->
+                    <ul class="message-list">
+
+                        <!-- for message in messages -->
+                        <!-- message-sent: message đã gửi từ user -->
+
+                        <!-- <li class="message message-sent">
+                            <div class="message-text">
+                                <div class="message-sender">
+                                    <b>You or Username</b>
+                                </div>
+                                <div class="message-content">
+                                    Hello World!!!
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="message message-received">
+                            <div class="message-text">
+                                <div class="message-sender">
+                                    <b>AI Chatbot</b>
+                                </div>
+                                <div class="message-content">
+                                    Oke Thanks
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="message message-sent">
+                            <div class="message-text">
+                                <div class="message-sender">
+                                    <b>You or Username</b>
+                                </div>
+                                <div class="message-content">
+                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="message message-received">
+                            <div class="message-text">
+                                <div class="message-sender">
+                                    <b>AI Chatbot</b>
+                                </div>
+                                <div class="message-content">
+                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+                                </div>
+                            </div>
+                        </li> -->
+
+                    </ul>
+                </div>
+                <div class="chat-input p-3">
+                    <form method="POST" class="message-form">
+                        {% csrf_token %}
+                        <div id="input-message" class="form-group">
+                            <input type="text" class="form-control message-input" placeholder="Message..." required />
+                            <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="{% static 'main.js' %}"></script>
+{% endblock content %}

@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+}
+
+ul, li { list-style: none; }
+
+.left {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.left .chat-list-box {
+    height: 80%;
+    overflow-y: auto;
+}
+
+.right {
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-box {
+    display: flex;
+    width: 65%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.right .chat-content {
+    height: 85%;
+    overflow-y: auto;
+}
+
+.right .chat-input {
+    height: 10%;
+}
+
+.right .chat-input .form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.right .chat-input .form-group.hidden {
+    display: none;
+}
+
+.right .chat-input .form-group button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    height: 100%;
+    font-size: 18px;
+    padding: 6px 12px;
+    color: #38419D;
+}
+
+.chat-list-box .chat-item-box {
+    padding: 24px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+.chat-list-box .chat-item-box .chat-item-time {
+    opacity: 0.4;
+    margin-bottom: 16px;
+}
+
+.chat-list-box .chat-item-box ul {
+    margin: 0;
+    margin-block: 0;
+    padding-inline-start: 0;
+}
+
+.chat-list-box .chat-item-box ul li {
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat-list-box .chat-item-box ul li .delete-chat-btn {
+    cursor: pointer;
+    padding: 8px;
+}
+
+.chat-list-box .chat-item-box ul li .chat-item-title {
+    padding: 4px 16px 4px 0px;
+    cursor: pointer;
+    width: 224px;
+}
+
+.left .left-info b {
+    color: white;
+    margin-right: 24px;
+}
+
+.left .left-info a {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 1px solid #eee;
+    border-radius: 50%;
+}
+
+.hidden {
+    display: none;
+}
+
+/* message */
+.message {
+    margin-bottom: 16px;
+    list-style: none;
+}
+
+.message-text {
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.message-sent {
+    background-color: #dcf8c6;
+    text-align: justify;
+    border-radius: 8px;
+}
+
+.message-received {
+    background-color: #f1f0f0;
+    text-align: justify;
+    border-radius: 8px;
+}
+

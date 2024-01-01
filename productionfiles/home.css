@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #FFFFEC;
+    /* overflow: hidden có thể sẽ làm ẩn nội dung nếu nó quá dài */
+    overflow: hidden;  
+}
+
+.container .text {
+    position: relative;
+    color: #4070f4;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.auto-text {
+    min-height: calc(100vh - 56px);
+    /* height: 100%; */  
+}
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    /* text-align: left; */
+    /* gap: 2px; */
+}
+
+.home-box {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.home-box .btn {
+    width: 200px;
+}
+
+.container .text.first-text {
+    color: #FE7600;
+}
+
+
+.container .text.sec-text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #FFFFEC;
+    /* background-color: red; */
+    border-left: 2px solid #4070f4;
+    animation: animate 4s steps(12) infinite;
+}
+
+@keyframes animate {
+    40%, 60% {
+        left: calc(100% + 4px);
+    }
+
+    100% {
+        left: 0%;
+    }
+}
