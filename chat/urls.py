@@ -24,5 +24,5 @@ urlpatterns = [
     path('chat/retrive/<int:pk>/', retrive_chat, name='retrive-chat'),
     path('chat/delete/<int:pk>/', delete_chat, name='delete-chat'),
     path('api/chat/create/', chat_message_view, name='create-chat-and-message'),
-    path('api/chat/<int:chat_id>/add-messag/', chat_message_view, name='add-message-chat')
+    path('api/chat/<int:chat_id>/add-message/', chat_message_view, name='add-message-chat')
 ]

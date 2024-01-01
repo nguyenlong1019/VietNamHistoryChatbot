@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         chatId = messageInput.dataset.id;
 
         // url để xác định tạo chat mới hay add message vào chat cũ
-        const url = chatId ? `/api/chat/${chatId}/add-messag/` : '/api/chat/create/'; // sự kiện 2 tạo chat
+        const url = chatId ? `/api/chat/${chatId}/add-message/` : '/api/chat/create/'; // sự kiện 2 tạo chat
 
         fetch(url, {
             method: 'POST',

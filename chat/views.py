@@ -10,7 +10,7 @@ import json # dùng thư viện để xử lý json từ bên client gửi đế
 
 import openai
 
-openai_api_key = "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"
+openai_api_key = API
 openai.api_key = openai_api_key
 
 
@@ -82,6 +82,7 @@ def chat_message_view(request, chat_id=None):
         print(data) # data chính là request.body lấy được từ client, chính là message
         # answer = "Chatbot đưa ra câu trả lời cho bạn!!!"
         answer = ask_openai(data)
+        # print(answer, type(answer))
         if chat_id:
             # xử lý khi gửi dữ liệu tại chat đã tạo
             chat = Chat.objects.get(user=request.user, pk=chat_id)
