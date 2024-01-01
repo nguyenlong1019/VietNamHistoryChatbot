@@ -10,7 +10,7 @@ import json # dùng thư viện để xử lý json từ bên client gửi đế
 
 import openai
 
-openai_api_key = API
+openai_api_key = "API"
 openai.api_key = openai_api_key
 
 
